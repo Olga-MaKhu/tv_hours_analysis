@@ -4,6 +4,7 @@ pacman::p_load(tidyverse,
 
 tv_hr_table <- 
   gss_cat %>% 
+  filter(age >= 30) %>% 
   group_by(marital) %>% 
   summarise(mean_tv_hrs = mean(tvhours, na.rm = T))
 
